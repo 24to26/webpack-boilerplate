@@ -1,0 +1,35 @@
+{
+  "name": "webpack-boilerplate-24to26",
+  "version": "1.0.0",
+  "description": "webpack-boilerplate by @24to26",
+  "scripts": {
+    "build": "npm run prod",
+    "dev-server": "webpack serve --env mode=development --open",
+    "dev": "webpack --env mode=development",
+    "prod": "webpack --env mode=production --env presets=compress && npm run post-build",
+    "prod:preset": "npm run prod --env presets=compress,analyze",
+    "post-build": "rm -rf ../backend/build && mkdir ../backend/build && cp -r build/* ../backend/build/"
+  },
+  "author": "24to26",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@types/webpack": "^5.28.0",
+    "babel-loader": "^8.2.2",
+    "compression-webpack-plugin": "^9.0.0",
+    "css-loader": "^6.3.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.3.0",
+    "postcss": "^8.3.8",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
